@@ -31,7 +31,6 @@
 		8C87F7262AFC0CFD00B543D7 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87F7252AFC0CFD00B543D7 /* PostsViewModel.swift */; };
 		8C87F72A2AFC0D7500B543D7 /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87F7292AFC0D7500B543D7 /* PostDTO.swift */; };
 		8C87F72D2AFC106B00B543D7 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87F72C2AFC106B00B543D7 /* BaseViewModel.swift */; };
-		8C87F72F2AFC144100B543D7 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87F72E2AFC144100B543D7 /* ViewModelBased.swift */; };
 		8C87F7332AFC151700B543D7 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87F7322AFC151700B543D7 /* Networkable.swift */; };
 		8C87F73A2AFC201B00B543D7 /* UIViewController+DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87F7392AFC201B00B543D7 /* UIViewController+DefaultCell.swift */; };
 		8C87F73D2AFC2AF500B543D7 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87F73C2AFC2AF500B543D7 /* PostCollectionViewCell.swift */; };
@@ -67,7 +66,6 @@
 		8C87F7252AFC0CFD00B543D7 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		8C87F7292AFC0D7500B543D7 /* PostDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
 		8C87F72C2AFC106B00B543D7 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		8C87F72E2AFC144100B543D7 /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
 		8C87F7322AFC151700B543D7 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
 		8C87F7392AFC201B00B543D7 /* UIViewController+DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DefaultCell.swift"; sourceTree = "<group>"; };
 		8C87F73C2AFC2AF500B543D7 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -280,9 +278,8 @@
 		8C87F72B2AFC106400B543D7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				8C87F72C2AFC106B00B543D7 /* BaseViewModel.swift */,
-				8C87F72E2AFC144100B543D7 /* ViewModelBased.swift */,
 				8C7B8F9F2AFCA7DB00B28049 /* BaseViewController.swift */,
+				8C87F72C2AFC106B00B543D7 /* BaseViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -442,7 +439,6 @@
 				8C87F7332AFC151700B543D7 /* Networkable.swift in Sources */,
 				8C87F7222AFC08E900B543D7 /* APIConstants.swift in Sources */,
 				8C87F73D2AFC2AF500B543D7 /* PostCollectionViewCell.swift in Sources */,
-				8C87F72F2AFC144100B543D7 /* ViewModelBased.swift in Sources */,
 				8C87F70C2AFBCDF100B543D7 /* AddressDTO.swift in Sources */,
 				8C87F73A2AFC201B00B543D7 /* UIViewController+DefaultCell.swift in Sources */,
 			);

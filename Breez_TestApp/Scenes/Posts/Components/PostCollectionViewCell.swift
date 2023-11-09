@@ -39,7 +39,10 @@ final class PostCollectionViewCell: UICollectionViewCell {
                 return
             }
             
-            self.delegate?.handleInfoButtonTapped(postId: self.postId, username: self.username)
+            self.delegate?.handleInfoButtonTapped(
+                postId: self.postId,
+                username: self.username
+            )
         }
         
         return UIButton(type: .infoLight, primaryAction: tapAction)

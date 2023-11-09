@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol ViewModelBased {
+    
+    associatedtype ViewModel
+    var viewModel: ViewModel { get set }
+    
+    func initViewModel()
+}
+
 class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, ViewModelBased {
     
     // MARK: Properties

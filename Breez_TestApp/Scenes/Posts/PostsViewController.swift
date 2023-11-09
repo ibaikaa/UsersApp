@@ -54,7 +54,7 @@ final class PostsViewController: BaseViewController<PostsViewModel> {
     
 }
 
-// MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource, PostCollectionViewCellDelegate
 
 extension PostsViewController: UICollectionViewDataSource, PostCollectionViewCellDelegate {
 
@@ -115,5 +115,3 @@ extension PostsViewController: UICollectionViewDelegateFlowLayout {
     }
 
 }
-
-// MARK: - PostCollectionViewCellDelegate
