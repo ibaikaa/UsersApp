@@ -10,8 +10,8 @@ import Moya
 
 protocol BaseViewModelProtocol {
     var reloadData: (() -> Void)? { get set }
-    var showError: ((String) -> Void)? { get set }
     var showLoading: ((_ isLoading: Bool) -> Void)? { get set }
+    var showError: ((String) -> Void)? { get set }
     
     associatedtype Data: Decodable
     var data: Data? { get set }
@@ -24,8 +24,8 @@ protocol BaseViewModelProtocol {
 class BaseViewModel<Data: Decodable>: BaseViewModelProtocol {
     
     var reloadData: (() -> Void)?
-    var showError: ((String) -> Void)?
     var showLoading: ((Bool) -> Void)?
+    var showError: ((String) -> Void)?
     
     var data: Data?
     

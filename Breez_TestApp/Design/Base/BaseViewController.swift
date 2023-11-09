@@ -51,15 +51,15 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, Vi
     // MARK: Methods
     
     func initViewModel() {
-        self.viewModel.showError = { [weak self] error in
-            DispatchQueue.main.async {
-                self?.showErrorAlert(description: error)
-            }
-        }
-        
         self.viewModel.showLoading = { [weak self] isLoading in
             DispatchQueue.main.async {
                 isLoading ? self?.showLoader() : self?.hideLoader()
+            }
+        }
+        
+        self.viewModel.showError = { [weak self] error in
+            DispatchQueue.main.async {
+                self?.showErrorAlert(description: error)
             }
         }
     }
@@ -110,6 +110,23 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, Vi
         }
         
         activityIndicator.removeFromSuperview()
+    }
+    
+    private func showErrorAlert(description: String) {
+        let alert = UIAlertController(
+            title: "Error",
+            message: description,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default
+            )
+        )
+        
+        present(alert, animated: true)
     }
     
 }
