@@ -98,10 +98,13 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, Vi
             subview.isHidden = true
         }
         
+        activityIndicator.startAnimating()
         activityIndicator.isHidden = false
     }
     
     private func hideLoader() {
+        activityIndicator.stopAnimating()
+        
         for subview in view.subviews where subview != activityIndicator {
             subview.isHidden = false
         }
