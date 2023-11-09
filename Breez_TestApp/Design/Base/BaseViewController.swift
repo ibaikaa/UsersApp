@@ -13,7 +13,6 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, Vi
     
     var viewModel: ViewModel
     
-    
     // MARK: Init
     
     init(viewModel: ViewModel) {
@@ -57,6 +56,12 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, Vi
                 self?.showErrorAlert(description: error)
             }
         }
+        
+        self.viewModel.showLoading = { [weak self] isLoading in
+            DispatchQueue.main.async {
+                isLoading ? self?.showLoader() : self?.hideLoader()
+            }
+        }
     }
     
     func setupUI() {
@@ -73,6 +78,35 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, Vi
     
     func layoutSubviews() {
         // This method is used to override in child classes
+    }
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .large)
+        
+        view.isHidden = true
+        
+        return view
+    }()
+    
+    private func showLoader() {
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+        }
+        
+        for subview in view.subviews where subview != activityIndicator {
+            subview.isHidden = true
+        }
+        
+        activityIndicator.isHidden = false
+    }
+    
+    private func hideLoader() {
+        for subview in view.subviews where subview != activityIndicator {
+            subview.isHidden = false
+        }
+        
+        activityIndicator.removeFromSuperview()
     }
     
 }

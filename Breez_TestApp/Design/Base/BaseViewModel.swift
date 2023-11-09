@@ -11,6 +11,7 @@ import Moya
 protocol BaseViewModelProtocol {
     var reloadData: (() -> Void)? { get set }
     var showError: ((String) -> Void)? { get set }
+    var showLoading: ((_ isLoading: Bool) -> Void)? { get set }
     
     associatedtype Data: Decodable
     var data: Data? { get set }
@@ -24,6 +25,7 @@ class BaseViewModel<Data: Decodable>: BaseViewModelProtocol {
     
     var reloadData: (() -> Void)?
     var showError: ((String) -> Void)?
+    var showLoading: ((Bool) -> Void)?
     
     var data: Data?
     
@@ -33,10 +35,12 @@ class BaseViewModel<Data: Decodable>: BaseViewModelProtocol {
     }
     
     func fetchData() {
-        // This method is used to override in child classes
+        showLoading?(true)
     }
     
     final func handleResult(_ result: Result<Data, Error>) {
+        showLoading?(false)
+        
         switch result {
         case .success(let model):
             data = model
