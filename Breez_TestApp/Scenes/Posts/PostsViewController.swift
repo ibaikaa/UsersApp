@@ -44,7 +44,8 @@ final class PostsViewController: BaseViewController<PostsViewModel> {
     override func layoutSubviews() {
         view.addSubview(postsCollectionView)
         postsCollectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.right.bottom.equalToSuperview()
         }
         
         postsCollectionView.bounces = false

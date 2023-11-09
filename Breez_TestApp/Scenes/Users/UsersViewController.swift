@@ -41,7 +41,8 @@ final class UsersViewController: BaseViewController<UsersViewModel> {
     override func layoutSubviews() {
         view.addSubview(usersTableView)
         usersTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.right.bottom.equalToSuperview()
         }
         
         usersTableView.bounces = false
