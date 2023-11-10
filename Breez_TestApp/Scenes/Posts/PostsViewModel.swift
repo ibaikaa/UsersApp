@@ -16,7 +16,7 @@ final class PostsViewModel: BaseViewModel<[PostDTO]> {
         self.userId = userId
         self._username = username
         
-        super.init(navigationBarTitle: username)
+        super.init(navigationBarTitle: name)
     }
     
     override func fetchData() {
