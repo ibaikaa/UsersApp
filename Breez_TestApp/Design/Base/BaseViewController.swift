@@ -23,7 +23,7 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, Vi
     
     // MARK: Init
     
-    init(viewModel: ViewModel) {
+    required init(viewModel: ViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
